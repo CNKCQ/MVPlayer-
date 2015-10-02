@@ -9,5 +9,9 @@
 #ifndef MVPlayer_VendorMacro_h
 #define MVPlayer_VendorMacro_h
 
+#import "AFNetworking.h"
+#import "MBProgressHUD.h"
+#import "MJExtension.h"
+#import "MJRefresh.h"
 
 #endif

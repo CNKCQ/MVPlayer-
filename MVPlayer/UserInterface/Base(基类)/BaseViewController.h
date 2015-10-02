@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
-@interface BaseViewController : NSObject
+#import <UIKit/UIKit.h>
+@interface BaseViewController : UIViewController
 
 @end

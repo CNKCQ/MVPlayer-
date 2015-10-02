@@ -10,4 +10,10 @@
 
 @implementation BaseViewController
 
+- (void)viewDidLoad{
+    [super viewDidLoad];
+    self.view.backgroundColor = View_Background_Color;
+}
+
+
 @end
