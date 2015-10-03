@@ -8,8 +8,15 @@
 
 #ifndef MVPlayer_Prefixpch_pch
 #define MVPlayer_Prefixpch_pch
+/**************************** dividing line ***************************/
 
-// Include any system framework and library headers here that should be included in all compilation units.
-// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+#import "AppMacro.h"
+#import "UtilsMacro.h"
+#import "VendorMacro.h"
+#import "NotificationMacro.h"
+
+
+/**************************** dividing line ***************************/
+
 
 #endif /* MVPlayer_Prefixpch_pch */

@@ -1,0 +1,13 @@
+platform :ios, "6.0"
+
+pod "SDCycleScrollView"
+pod "SDWebImage"
+pod "MJRefresh"
+pod "AFNetworking"
+pod "MBProgressHUD"
+pod "FMDB"
+pod "MJExtension"
+
+target :MVPlayerTests, :exclusive => true do
+  # pod 'Kiwi'
+end

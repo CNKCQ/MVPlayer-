@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "TabBarController.h"
 
 @interface AppDelegate ()
 
@@ -16,8 +17,13 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
-    return YES;
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    
+    TabBarController *rootViewController = [[TabBarController alloc] init];
+    
+    [self.window setRootViewController:rootViewController];
+    
+    [self.window makeKeyAndVisible];    return YES;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
