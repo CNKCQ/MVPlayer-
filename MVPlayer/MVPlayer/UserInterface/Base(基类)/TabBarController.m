@@ -14,7 +14,7 @@
 #import "DiscoverViewController.h"
 #import "MineViewController.h"
 
-@interface TabBarController ()
+@interface TabBarController ()<UITabBarControllerDelegate>
 
 @end
 
@@ -31,7 +31,8 @@
     [self addChildController:discoverViewController title:@"发现" imageString:@"ic_tab_discover" selectedImageString:@"ic_tab_discover_select"];
     MineViewController *mineViewController = [[MineViewController alloc] init];
     [self addChildController:mineViewController title:@"我" imageString:@"ic_tab_my" selectedImageString:@"ic_tab_my_select"];
-
+    [self changeNavigationBarTinColor];
+    self.delegate = self;
 }
 
 - (void)addChildController:(UIViewController *)childController title:(NSString *)title imageString:(NSString *)imageString selectedImageString:(NSString *)selectedImageString{
@@ -50,6 +51,19 @@
     NavigationController *navigationController = [[NavigationController alloc] initWithRootViewController:childController];
     [self addChildViewController:navigationController];
     
+}
+- (void)changeNavigationBarTinColor{
+    
+        [[UINavigationBar appearance] setBarTintColor:UIColorWithRGB(251, 117, 44)];
+}
+- (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController{
+    NavigationController *navigationController = (NavigationController *)viewController;
+    
+    if ([navigationController.viewControllers[0] isKindOfClass:[SubscribeViewController class]]) {
+      
+    }else{
+       
+    }
 }
 
 @end

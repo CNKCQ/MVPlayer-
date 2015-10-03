@@ -13,5 +13,6 @@
 - (void)viewDidLoad{
     [super viewDidLoad];
     self.navigationController.navigationBar.barStyle = UIStatusBarStyleLightContent;
+  
 }
 @end

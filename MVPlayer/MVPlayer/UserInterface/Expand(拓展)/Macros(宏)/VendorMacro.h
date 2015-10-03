@@ -10,8 +10,7 @@
 #define MVPlayer_VendorMacro_h
 
 //#import "AFNetworking.h"
-//#import "MBProgressHUD.h"
-//#import "MJExtension.h"
-//#import "MJRefresh.h"
+#import "MBProgressHUD.h"
+#import "UtilsCommon.h"
 
 #endif

@@ -10,4 +10,10 @@
 
 @implementation SubscribeViewController
 
+- (void)viewDidLoad{
+    [super viewDidLoad];
+    self.navigationController.navigationBarHidden = YES;
+  
+}
+
 @end
