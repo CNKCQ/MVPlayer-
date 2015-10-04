@@ -11,4 +11,17 @@
 
 @implementation NetworkService
 
++ (void)HomeRequestWithURL:(NSString *)url parameters:(NSMutableDictionary *)params success:(void(^)(id data))successOperation failure:(void(^)(NSError *error))failureOperation{
+    
+    NSString *HomeURL = [NSString stringWithFormat:@"%@%@",MVURL,HOME_REQUESTURL];
+    
+    [NetworkPort GETRequestWithURL:HomeURL parameters:params success:^(id data) {
+        
+        successOperation(data);
+    } failure:^(NSError *error) {
+        
+        failureOperation(error);
+    }];
+    
+}
 @end

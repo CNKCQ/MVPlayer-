@@ -6,21 +6,166 @@
 //  Copyright © 2015年 Jack. All rights reserved.
 //
 
+
+#define BOXCELL_ID @"box"
+#define BOXCELL_TITLE_ID @"box_title"
+
 #import "ChoiceViewController.h"
+#import "SDCycleScrollView.h"
+#import "HomeModel.h"
+#import "Banner.h"
 /**
  *  精选
  */
+@interface ChoiceViewController ()<SDCycleScrollViewDelegate,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>{
+    SDCycleScrollView *cycleScrollView;
+   
+}
+
+@property (nonatomic, strong) HomeModel *homeModel;
+@property (nonatomic, strong)  UICollectionView *collectionView;
+
+@end
+
 @implementation ChoiceViewController
 
 - (void)viewDidLoad{
     [super viewDidLoad];
     /**设置状态栏为白色*/
     self.navigationController.navigationBar.barStyle = UIStatusBarStyleLightContent;
+    self.homeModel = [[HomeModel alloc] init];
+    [self loadData];
+
     [self layoutUI];
 }
 - (void)layoutUI{
-    debugLog(@"%@",@"hello");
+
+    SDCycleScrollView *cycleScrollView2 = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, 0, WIDTH, 0) imageURLStringsGroup:nil];
+    [self.view addSubview:cycleScrollView2];
+    cycleScrollView = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, 64, WIDTH, 180) imageURLStringsGroup:nil];
+    cycleScrollView.backgroundColor = [UIColor orangeColor];
+    cycleScrollView.pageControlAliment = SDCycleScrollViewPageContolAlimentRight;
+    cycleScrollView.delegate = self;
+    cycleScrollView.dotColor = [UIColor yellowColor]; // 自定义分页控件小圆标颜色
+    cycleScrollView.placeholderImage = [UIImage imageNamed:@"placeholder"];
+    [self setBannerData];
+    [self.view addSubview:cycleScrollView];
+    
+    
+    UICollectionViewFlowLayout *flowLayout= [[UICollectionViewFlowLayout alloc] init];
+    flowLayout.scrollDirection = UICollectionViewScrollDirectionVertical;
+    flowLayout.minimumLineSpacing = 10.0f;/**< 行间距 */
+    flowLayout.minimumInteritemSpacing = 10.0f;/**< 列间距 */
+    flowLayout.sectionInset = UIEdgeInsetsMake(10, 10, 10, 10);
+    
+    
+    _collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(cycleScrollView.frame), WIDTH, HEIGHT - CGRectGetMaxY(cycleScrollView.frame)) collectionViewLayout:flowLayout];
+    _collectionView.dataSource = self;
+    _collectionView.delegate = self;
+    _collectionView.backgroundColor = [UIColor whiteColor];
+    _collectionView.allowsMultipleSelection = YES;
+    _collectionView.showsVerticalScrollIndicator = NO;
+    [_collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:BOXCELL_ID];
+    [_collectionView registerClass:[UICollectionViewCell class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:BOXCELL_TITLE_ID];
+
+    [self.view addSubview:_collectionView];
+
+
+ 
+}
+#pragma mark - dataSource for collectionView
+
+
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
+    return 10;
+}
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
+    
+    return 4;
+}
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
+    
+    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:BOXCELL_ID forIndexPath:indexPath];
+   
+    cell.backgroundColor = [UIColor redColor];
+    cell.selected = NO;
+    
+    return cell;
+}
+
+- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath{
+    
+//    if (kind == UICollectionElementKindSectionHeader) {
+    
+        UICollectionViewCell *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:BOXCELL_TITLE_ID forIndexPath:indexPath];
+    headerView.backgroundColor = [UIColor blueColor];
+ 
+        return headerView;
+        
+//    }
+}
+
+#pragma mark - Delegate for UICollectionViewFlowLayout
+
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    return CGSizeMake(172, 100);
+}
+
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section
+{
+    
+    return CGSizeMake(320, 35);
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    
+    NSLog(@"%ld 的 item 被选中了",indexPath.row);
+    UICollectionViewCell *cell = [collectionView cellForItemAtIndexPath:indexPath];
+    cell.selected = !cell.selected;
+    
+    
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath{
+    
+}
+- (void)collectionView:(UICollectionView *)collectionView didHighlightItemAtIndexPath:(NSIndexPath *)indexPath{
+    
+    UICollectionViewCell *cell = [collectionView cellForItemAtIndexPath:indexPath];
+    cell.backgroundColor = [UIColor blueColor];
+    
 }
 
 
+- (void)setBannerData{
+    
+    NSMutableArray *bannerArray = [NSMutableArray array];
+    NSMutableArray *bannerTitles = [NSMutableArray array];
+    for (Banner *banner in self.homeModel.banner) {
+        [bannerArray addObject:banner.bigImg];
+        [bannerTitles addObject:banner.title];
+    }
+    cycleScrollView.imageURLStringsGroup = bannerArray;
+    cycleScrollView.titlesGroup = bannerTitles;
+    
+}
+- (void)loadData{
+    
+    [NetworkService HomeRequestWithURL:nil parameters:nil success:^(id data) {
+
+        HomeModel *homeModel = [[HomeModel alloc] initWithDictionary:data];
+        
+        self.homeModel = homeModel;
+        [self setBannerData];
+    } failure:^(NSError *error) {
+        debugLog(@"网络请求错误，请检查您的网络！");
+    }];
+}
+
+- (void)cycleScrollView:(SDCycleScrollView *)cycleScrollView didSelectItemAtIndex:(NSInteger)index{
+    
+}
 @end

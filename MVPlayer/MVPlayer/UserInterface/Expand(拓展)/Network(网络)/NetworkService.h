@@ -10,4 +10,6 @@
 
 @interface NetworkService : NSObject
 
+
++ (void)HomeRequestWithURL:(NSString *)url parameters:(NSMutableDictionary *)params success:(void(^)(id data))successOperation failure:(void(^)(NSError *error))failureOperation;
 @end

@@ -88,6 +88,12 @@
 		04459A0E1BBFDE4C00F9E160 /* NetworkService.m in Sources */ = {isa = PBXBuildFile; fileRef = 04459A0D1BBFDE4C00F9E160 /* NetworkService.m */; settings = {ASSET_TAGS = (); }; };
 		04459A111BBFDFFA00F9E160 /* NetworkPort.m in Sources */ = {isa = PBXBuildFile; fileRef = 04459A101BBFDFFA00F9E160 /* NetworkPort.m */; settings = {ASSET_TAGS = (); }; };
 		04459A141BBFEE0900F9E160 /* UtilsCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = 04459A131BBFEE0900F9E160 /* UtilsCommon.m */; settings = {ASSET_TAGS = (); }; };
+		04D5CAA81BC12066008E943F /* Banner.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D5CA9C1BC12066008E943F /* Banner.m */; settings = {ASSET_TAGS = (); }; };
+		04D5CAA91BC12066008E943F /* Boxes.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D5CA9E1BC12066008E943F /* Boxes.m */; settings = {ASSET_TAGS = (); }; };
+		04D5CAAA1BC12066008E943F /* GameInformation.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D5CAA11BC12066008E943F /* GameInformation.m */; settings = {ASSET_TAGS = (); }; };
+		04D5CAAB1BC12066008E943F /* HomeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D5CAA31BC12066008E943F /* HomeModel.m */; settings = {ASSET_TAGS = (); }; };
+		04D5CAAC1BC12066008E943F /* Videos.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D5CAA51BC12066008E943F /* Videos.m */; settings = {ASSET_TAGS = (); }; };
+		04D5CAAD1BC12066008E943F /* VipInformation.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D5CAA71BC12066008E943F /* VipInformation.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -279,6 +285,19 @@
 		04459A101BBFDFFA00F9E160 /* NetworkPort.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkPort.m; sourceTree = "<group>"; };
 		04459A121BBFEE0900F9E160 /* UtilsCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UtilsCommon.h; sourceTree = "<group>"; };
 		04459A131BBFEE0900F9E160 /* UtilsCommon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UtilsCommon.m; sourceTree = "<group>"; };
+		04D5CA9B1BC12066008E943F /* Banner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Banner.h; sourceTree = "<group>"; };
+		04D5CA9C1BC12066008E943F /* Banner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Banner.m; sourceTree = "<group>"; };
+		04D5CA9D1BC12066008E943F /* Boxes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Boxes.h; sourceTree = "<group>"; };
+		04D5CA9E1BC12066008E943F /* Boxes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Boxes.m; sourceTree = "<group>"; };
+		04D5CA9F1BC12066008E943F /* DataModels.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataModels.h; sourceTree = "<group>"; };
+		04D5CAA01BC12066008E943F /* GameInformation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameInformation.h; sourceTree = "<group>"; };
+		04D5CAA11BC12066008E943F /* GameInformation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameInformation.m; sourceTree = "<group>"; };
+		04D5CAA21BC12066008E943F /* HomeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeModel.h; sourceTree = "<group>"; };
+		04D5CAA31BC12066008E943F /* HomeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeModel.m; sourceTree = "<group>"; };
+		04D5CAA41BC12066008E943F /* Videos.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Videos.h; sourceTree = "<group>"; };
+		04D5CAA51BC12066008E943F /* Videos.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Videos.m; sourceTree = "<group>"; };
+		04D5CAA61BC12066008E943F /* VipInformation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VipInformation.h; sourceTree = "<group>"; };
+		04D5CAA71BC12066008E943F /* VipInformation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VipInformation.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -330,6 +349,7 @@
 			isa = PBXGroup;
 			children = (
 				044599081BBF7F6C00F9E160 /* UserInterface */,
+				0445991C1BBF7F6C00F9E160 /* Expand(拓展) */,
 				044599331BBF7F6C00F9E160 /* Vender(第三方) */,
 				044598D41BBF7F0C00F9E160 /* Supporting Files */,
 			);
@@ -383,7 +403,6 @@
 				044599091BBF7F6C00F9E160 /* Base(基类) */,
 				044599101BBF7F6C00F9E160 /* Choice(精选) */,
 				044599161BBF7F6C00F9E160 /* Discover(发现) */,
-				0445991C1BBF7F6C00F9E160 /* Expand(拓展) */,
 				044599271BBF7F6C00F9E160 /* Mine(我) */,
 				0445992D1BBF7F6C00F9E160 /* Subscribe(订阅) */,
 			);
@@ -425,6 +444,19 @@
 		044599141BBF7F6C00F9E160 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				04D5CA9B1BC12066008E943F /* Banner.h */,
+				04D5CA9C1BC12066008E943F /* Banner.m */,
+				04D5CA9D1BC12066008E943F /* Boxes.h */,
+				04D5CA9E1BC12066008E943F /* Boxes.m */,
+				04D5CA9F1BC12066008E943F /* DataModels.h */,
+				04D5CAA01BC12066008E943F /* GameInformation.h */,
+				04D5CAA11BC12066008E943F /* GameInformation.m */,
+				04D5CAA21BC12066008E943F /* HomeModel.h */,
+				04D5CAA31BC12066008E943F /* HomeModel.m */,
+				04D5CAA41BC12066008E943F /* Videos.h */,
+				04D5CAA51BC12066008E943F /* Videos.m */,
+				04D5CAA61BC12066008E943F /* VipInformation.h */,
+				04D5CAA71BC12066008E943F /* VipInformation.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -478,7 +510,8 @@
 				044599201BBF7F6C00F9E160 /* Macros(宏) */,
 				044599261BBF7F6C00F9E160 /* Network(网络) */,
 			);
-			path = "Expand(拓展)";
+			name = "Expand(拓展)";
+			path = "UserInterface/Expand(拓展)";
 			sourceTree = "<group>";
 		};
 		0445991D1BBF7F6C00F9E160 /* Category(分类) */ = {
@@ -975,6 +1008,7 @@
 				044599541BBFD21200F9E160 /* AFSecurityPolicy.m in Sources */,
 				044599FE1BBFD5F700F9E160 /* MJRefreshAutoGifFooter.m in Sources */,
 				044599971BBFD2CD00F9E160 /* SDImageCache.m in Sources */,
+				04D5CAA81BC12066008E943F /* Banner.m in Sources */,
 				0445999C1BBFD2CD00F9E160 /* SDWebImageManager.m in Sources */,
 				04459A051BBFD5F700F9E160 /* MJRefreshNormalHeader.m in Sources */,
 				0445996C1BBFD26C00F9E160 /* TAAbstractDotView.m in Sources */,
@@ -991,6 +1025,7 @@
 				044599C11BBFD3FE00F9E160 /* MJDictionaryCache.m in Sources */,
 				044599551BBFD21200F9E160 /* AFURLConnectionOperation.m in Sources */,
 				044599C81BBFD3FE00F9E160 /* NSObject+MJCoding.m in Sources */,
+				04D5CAAA1BC12066008E943F /* GameInformation.m in Sources */,
 				044599981BBFD2CD00F9E160 /* SDWebImageCompat.m in Sources */,
 				044599501BBFD21200F9E160 /* AFHTTPRequestOperation.m in Sources */,
 				044599721BBFD26C00F9E160 /* UIView+SDExtension.m in Sources */,
@@ -1021,12 +1056,15 @@
 				044599C51BBFD3FE00F9E160 /* MJPropertyKey.m in Sources */,
 				044599951BBFD2CD00F9E160 /* MKAnnotationView+WebCache.m in Sources */,
 				044599961BBFD2CD00F9E160 /* NSData+ImageContentType.m in Sources */,
+				04D5CAA91BC12066008E943F /* Boxes.m in Sources */,
 				04459A061BBFD5F700F9E160 /* MJRefreshStateHeader.m in Sources */,
 				0445999E1BBFD2CD00F9E160 /* UIButton+WebCache.m in Sources */,
 				044599A81BBFD38D00F9E160 /* MBProgressHUD.m in Sources */,
+				04D5CAAB1BC12066008E943F /* HomeModel.m in Sources */,
 				044599A31BBFD2CD00F9E160 /* UIImageView+WebCache.m in Sources */,
 				04459A081BBFD5F700F9E160 /* MJRefreshConst.m in Sources */,
 				04459A011BBFD5F700F9E160 /* MJRefreshBackGifFooter.m in Sources */,
+				04D5CAAD1BC12066008E943F /* VipInformation.m in Sources */,
 				0445996B1BBFD26C00F9E160 /* NSData+SDDataCache.m in Sources */,
 				044599361BBF7F6C00F9E160 /* TabBarController.m in Sources */,
 				04459A041BBFD5F700F9E160 /* MJRefreshGifHeader.m in Sources */,
@@ -1039,6 +1077,7 @@
 				0445996E1BBFD26C00F9E160 /* TADotView.m in Sources */,
 				044598D61BBF7F0C00F9E160 /* main.m in Sources */,
 				044599CA1BBFD3FE00F9E160 /* NSObject+MJProperty.m in Sources */,
+				04D5CAAC1BC12066008E943F /* Videos.m in Sources */,
 				0445993A1BBF7F6C00F9E160 /* SubscribeViewController.m in Sources */,
 				044599701BBFD26C00F9E160 /* SDCollectionViewCell.m in Sources */,
 			);

@@ -10,6 +10,7 @@
 #import "AFNetworking.h"
 #import "SDWebImageManager.h"
 
+
 @implementation NetworkPort
 
 + (void)GETRequestWithURL:(NSString *)url parameters:(NSMutableDictionary *)params success:(void(^)(id data))successOperation failure:(void(^)(NSError *error))failureOperation{
@@ -86,5 +87,29 @@
         
     }];
     
+}
++(BOOL)isInternetConnectionAvailable{
+    
+    BOOL isExistNetwork = YES;
+    AFNetworkReachabilityManager *manager = [AFNetworkReachabilityManager sharedManager];
+    [manager startMonitoring];
+    switch (manager.networkReachabilityStatus) {
+        case AFNetworkReachabilityStatusUnknown:
+            isExistNetwork = YES;
+            break;
+        case AFNetworkReachabilityStatusNotReachable:
+            isExistNetwork = NO;
+            break;
+        case AFNetworkReachabilityStatusReachableViaWWAN:
+            isExistNetwork = YES;
+            break;
+        case AFNetworkReachabilityStatusReachableViaWiFi:
+            isExistNetwork = YES;
+            break;
+        default:
+            break;
+    }
+    [manager stopMonitoring];
+    return isExistNetwork;
 }
 @end

@@ -38,5 +38,11 @@
  *  @param failureHandle 请求失败
  */
 +(void)downloadPictures:(NSString *)folder withRequestUrl:(NSString *)requestUrl  imageName:(NSString *)imageName  success:(void (^)(id data))successOperation failure:(void (^)(NSError * error))failureOperation;
+/**
+ *  检测网络连接
+ *
+ *  @return 返回网络连接状态
+ */
++(BOOL)isInternetConnectionAvailable;
 
 @end
