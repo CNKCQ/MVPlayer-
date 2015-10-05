@@ -14,6 +14,11 @@
 #import "SDCycleScrollView.h"
 #import "HomeModel.h"
 #import "Banner.h"
+#import "Boxes.h"
+#import "BoxView.h"
+#import "Videos.h"
+#import "VideoView.h"
+#import "UIImageView+WebCache.h"
 /**
  *  精选
  */
@@ -65,8 +70,8 @@
     _collectionView.backgroundColor = [UIColor whiteColor];
     _collectionView.allowsMultipleSelection = YES;
     _collectionView.showsVerticalScrollIndicator = NO;
-    [_collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:BOXCELL_ID];
-    [_collectionView registerClass:[UICollectionViewCell class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:BOXCELL_TITLE_ID];
+    [_collectionView registerClass:[VideoView class] forCellWithReuseIdentifier:BOXCELL_ID];
+    [_collectionView registerClass:[BoxView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:BOXCELL_TITLE_ID];
 
     [self.view addSubview:_collectionView];
 
@@ -77,30 +82,32 @@
 
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
-    return 10;
+    return self.homeModel.boxes.count;
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
     
-    return 4;
+    
+    return ((Boxes *)self.homeModel.boxes[section]).videos.count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:BOXCELL_ID forIndexPath:indexPath];
-   
-    cell.backgroundColor = [UIColor redColor];
-    cell.selected = NO;
+    VideoView *videoView = [collectionView dequeueReusableCellWithReuseIdentifier:BOXCELL_ID forIndexPath:indexPath];
+
+    Videos *videoModel = ((Boxes *)self.homeModel.boxes[indexPath.section]).videos[indexPath.item];
     
-    return cell;
+
+    [videoView loadDataWithModel:videoModel];
+    return videoView;
 }
 
 - (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath{
     
 //    if (kind == UICollectionElementKindSectionHeader) {
     
-        UICollectionViewCell *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:BOXCELL_TITLE_ID forIndexPath:indexPath];
-    headerView.backgroundColor = [UIColor blueColor];
+        BoxView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:BOXCELL_TITLE_ID forIndexPath:indexPath];
+        [headerView loadDataWithModel:self.homeModel.boxes[indexPath.section]];
  
         return headerView;
         
@@ -111,13 +118,13 @@
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    return CGSizeMake(172, 100);
+    return CGSizeMake(172, 120);
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section
 {
     
-    return CGSizeMake(320, 35);
+    return CGSizeMake(WIDTH, 55);
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
@@ -134,8 +141,8 @@
 }
 - (void)collectionView:(UICollectionView *)collectionView didHighlightItemAtIndexPath:(NSIndexPath *)indexPath{
     
-    UICollectionViewCell *cell = [collectionView cellForItemAtIndexPath:indexPath];
-    cell.backgroundColor = [UIColor blueColor];
+//    UICollectionViewCell *cell = [collectionView cellForItemAtIndexPath:indexPath];
+//    cell.backgroundColor = [UIColor blueColor];
     
 }
 
@@ -160,6 +167,7 @@
         
         self.homeModel = homeModel;
         [self setBannerData];
+        [_collectionView reloadData];
     } failure:^(NSError *error) {
         debugLog(@"网络请求错误，请检查您的网络！");
     }];

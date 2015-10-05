@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		041BEB991BC21D7C004AECB6 /* BoxView.m in Sources */ = {isa = PBXBuildFile; fileRef = 041BEB981BC21D7C004AECB6 /* BoxView.m */; settings = {ASSET_TAGS = (); }; };
+		041BEB9C1BC21DA4004AECB6 /* VideoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 041BEB9B1BC21DA4004AECB6 /* VideoView.m */; settings = {ASSET_TAGS = (); }; };
 		044598D61BBF7F0C00F9E160 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 044598D51BBF7F0C00F9E160 /* main.m */; };
 		044598D91BBF7F0C00F9E160 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 044598D81BBF7F0C00F9E160 /* AppDelegate.m */; };
 		044598DF1BBF7F0C00F9E160 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 044598DD1BBF7F0C00F9E160 /* Main.storyboard */; };
@@ -114,6 +116,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		041BEB971BC21D7C004AECB6 /* BoxView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoxView.h; sourceTree = "<group>"; };
+		041BEB981BC21D7C004AECB6 /* BoxView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoxView.m; sourceTree = "<group>"; };
+		041BEB9A1BC21DA4004AECB6 /* VideoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoView.h; sourceTree = "<group>"; };
+		041BEB9B1BC21DA4004AECB6 /* VideoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoView.m; sourceTree = "<group>"; };
 		044598D11BBF7F0C00F9E160 /* MVPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MVPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		044598D51BBF7F0C00F9E160 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		044598D71BBF7F0C00F9E160 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -464,6 +470,10 @@
 		044599151BBF7F6C00F9E160 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				041BEB971BC21D7C004AECB6 /* BoxView.h */,
+				041BEB981BC21D7C004AECB6 /* BoxView.m */,
+				041BEB9A1BC21DA4004AECB6 /* VideoView.h */,
+				041BEB9B1BC21DA4004AECB6 /* VideoView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1005,10 +1015,12 @@
 				044599A11BBFD2CD00F9E160 /* UIImage+WebP.m in Sources */,
 				0445999D1BBFD2CD00F9E160 /* SDWebImagePrefetcher.m in Sources */,
 				044599FB1BBFD5F700F9E160 /* MJRefreshComponent.m in Sources */,
+				041BEB991BC21D7C004AECB6 /* BoxView.m in Sources */,
 				044599541BBFD21200F9E160 /* AFSecurityPolicy.m in Sources */,
 				044599FE1BBFD5F700F9E160 /* MJRefreshAutoGifFooter.m in Sources */,
 				044599971BBFD2CD00F9E160 /* SDImageCache.m in Sources */,
 				04D5CAA81BC12066008E943F /* Banner.m in Sources */,
+				041BEB9C1BC21DA4004AECB6 /* VideoView.m in Sources */,
 				0445999C1BBFD2CD00F9E160 /* SDWebImageManager.m in Sources */,
 				04459A051BBFD5F700F9E160 /* MJRefreshNormalHeader.m in Sources */,
 				0445996C1BBFD26C00F9E160 /* TAAbstractDotView.m in Sources */,

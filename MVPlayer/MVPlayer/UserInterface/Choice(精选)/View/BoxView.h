@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Boxes.h"
 
 @interface BoxView : UICollectionViewCell
+
+- (void)loadDataWithModel:(Boxes *)boxModel;
 
 @end

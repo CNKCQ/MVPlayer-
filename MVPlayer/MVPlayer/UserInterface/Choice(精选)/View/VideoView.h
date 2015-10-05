@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Videos.h"
 
 @interface VideoView : UICollectionViewCell
+
+- (void)loadDataWithModel:(Videos *)videoModel;
 
 @end
