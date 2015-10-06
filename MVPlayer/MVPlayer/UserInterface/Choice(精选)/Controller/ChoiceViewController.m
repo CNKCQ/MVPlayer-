@@ -19,6 +19,7 @@
 #import "Videos.h"
 #import "VideoView.h"
 #import "UIImageView+WebCache.h"
+#import "VideoDetailController.h"
 /**
  *  精选
  */
@@ -47,7 +48,7 @@
 
     SDCycleScrollView *cycleScrollView2 = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, 0, WIDTH, 0) imageURLStringsGroup:nil];
     [self.view addSubview:cycleScrollView2];
-    cycleScrollView = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, 64, WIDTH, 180) imageURLStringsGroup:nil];
+    cycleScrollView = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, 0, WIDTH, 180) imageURLStringsGroup:nil];
     cycleScrollView.backgroundColor = [UIColor orangeColor];
     cycleScrollView.pageControlAliment = SDCycleScrollViewPageContolAlimentRight;
     cycleScrollView.delegate = self;
@@ -129,9 +130,9 @@
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     
-    NSLog(@"%ld 的 item 被选中了",indexPath.row);
-    UICollectionViewCell *cell = [collectionView cellForItemAtIndexPath:indexPath];
-    cell.selected = !cell.selected;
+    VideoDetailController *videoDetailController = [[VideoDetailController alloc] init];
+    videoDetailController.videoModel = ((Boxes *)self.homeModel.boxes[indexPath.section]).videos[indexPath.item];
+    [self.navigationController pushViewController:videoDetailController animated:YES];
     
     
 }
@@ -161,7 +162,7 @@
 }
 - (void)loadData{
     
-    [NetworkService HomeRequestWithURL:nil parameters:nil success:^(id data) {
+    [NetworkService homeRequestWithURL:nil parameters:nil success:^(id data) {
 
         HomeModel *homeModel = [[HomeModel alloc] initWithDictionary:data];
         
@@ -175,5 +176,22 @@
 
 - (void)cycleScrollView:(SDCycleScrollView *)cycleScrollView didSelectItemAtIndex:(NSInteger)index{
     
+    VideoDetailController *videoDetailController = [[VideoDetailController alloc] init];
+    videoDetailController.videoModel.bigImg = ((Banner *)self.homeModel.banner[index]).bigImg;
+    videoDetailController.videoModel.plid = ((Banner *)self.homeModel.banner[index]).plid;
+    videoDetailController.videoModel.urlIncludeIdsCount = ((Banner *)self.homeModel.banner[index]).urlIncludeIdsCount;
+     videoDetailController.videoModel.isAlbumcover = ((Banner *)self.homeModel.banner[index]).isAlbumcover;
+     videoDetailController.videoModel.shortDesc = ((Banner *)self.homeModel.banner[index]).shortDesc;
+     videoDetailController.videoModel.url = ((Banner *)self.homeModel.banner[index]).url;
+     videoDetailController.videoModel.image800x450 = ((Banner *)self.homeModel.banner[index]).image640310;
+      videoDetailController.videoModel.iid = ((Banner *)self.homeModel.banner[index]).iid;
+     videoDetailController.videoModel.type = ((Banner *)self.homeModel.banner[index]).type;
+    [self.navigationController pushViewController:videoDetailController animated:YES];
+    
+}
+
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    self.navigationController.navigationBarHidden = NO;
 }
 @end

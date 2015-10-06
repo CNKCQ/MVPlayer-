@@ -20,9 +20,14 @@
 #else
     manager.requestSerializer.timeoutInterval = 60.f;
 #endif
+    
+    manager.responseSerializer.acceptableContentTypes =  [NSSet setWithObjects:@"application/json",@"text/plain", @"text/json", @"text/javascript",@"text/html", nil];
+    
     manager.securityPolicy.allowInvalidCertificates = NO;
     
-    [manager GET:url parameters:params success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
+    NSString *urlStr = [url stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
+    
+    [manager GET:urlStr parameters:params success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
         
         if (responseObject) {
             successOperation(responseObject);
@@ -37,8 +42,13 @@
 
 + (void)POSTRequestWithURL:(NSString *)url parameters:(NSMutableDictionary *)params success:(void(^)(id data))successOperation failure:(void(^)(NSError *error))failureOperation{
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+#ifdef DEBUG_MODE
+    manager.requestSerializer.timeoutInterval = 30.f;
+#else
+    manager.requestSerializer.timeoutInterval = 60.f;
+#endif
     manager.responseSerializer = [AFHTTPResponseSerializer serializer];
-    manager.responseSerializer.acceptableContentTypes =  [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript",@"text/html", nil];
+    manager.responseSerializer.acceptableContentTypes =  [NSSet setWithObjects:@"application/json",@"text/plain", @"text/json", @"text/javascript",@"text/html", nil];
     [manager.requestSerializer setValue:@"keep-alive" forKey:@"Connection"];
     manager.securityPolicy.allowInvalidCertificates = NO;
     [manager POST:url parameters:params success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {

@@ -18,6 +18,7 @@
     [super viewDidLoad];
 //    /**统一改变导航栏的颜色*/
     [[UINavigationBar appearance] setBarTintColor:UIColorWithRGB(251, 117, 44)];
+    [self.navigationBar setTranslucent:NO];
     
 }
 

@@ -10,6 +10,14 @@
 
 @interface NetworkService : NSObject
 
+/**首页数据获取*/
++ (void)homeRequestWithURL:(NSString *)url parameters:(NSMutableDictionary *)params success:(void(^)(id data))successOperation failure:(void(^)(NSError *error))failureOperation;
 
-+ (void)HomeRequestWithURL:(NSString *)url parameters:(NSMutableDictionary *)params success:(void(^)(id data))successOperation failure:(void(^)(NSError *error))failureOperation;
+/**视频详情数据获取*/
++ (void)videoDetailRequestWithURL:(NSString *)url parameters:(NSMutableDictionary *)params success:(void(^)(id data))successOperation failure:(void(^)(NSError *error))failureOperation;
+
+/**视频推荐数据获取*/
++ (void)getRecommendRequestWithURL:(NSString *)url parameters:(NSMutableDictionary *)params success:(void(^)(id data))successOperation failure:(void(^)(NSError *error))failureOperation;
+
+
 @end
