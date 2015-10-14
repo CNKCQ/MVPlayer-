@@ -41,7 +41,7 @@
     self.navigationController.navigationBar.barStyle = UIStatusBarStyleLightContent;
     self.homeModel = [[HomeModel alloc] init];
     [self loadData];
-
+    
     [self layoutUI];
 }
 - (void)layoutUI{

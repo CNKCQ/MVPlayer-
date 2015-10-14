@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "TabBarController.h"
+#import <Bugly/CrashReporter.h>
 
 @interface AppDelegate ()
 
@@ -23,6 +24,14 @@
     
     [self.window setRootViewController:rootViewController];
     
+    
+#ifdef DEBUG_MODE
+    [[CrashReporter sharedInstance] enableLog:YES];
+#else
+
+#endif
+    [[CrashReporter sharedInstance] setUserId:@"Jack"];
+    [[CrashReporter sharedInstance] installWithAppId:@"900009567"];
     [self.window makeKeyAndVisible];    return YES;
 }
 

@@ -93,6 +93,11 @@
 		04459A0E1BBFDE4C00F9E160 /* NetworkService.m in Sources */ = {isa = PBXBuildFile; fileRef = 04459A0D1BBFDE4C00F9E160 /* NetworkService.m */; settings = {ASSET_TAGS = (); }; };
 		04459A111BBFDFFA00F9E160 /* NetworkPort.m in Sources */ = {isa = PBXBuildFile; fileRef = 04459A101BBFDFFA00F9E160 /* NetworkPort.m */; settings = {ASSET_TAGS = (); }; };
 		04459A141BBFEE0900F9E160 /* UtilsCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = 04459A131BBFEE0900F9E160 /* UtilsCommon.m */; settings = {ASSET_TAGS = (); }; };
+		046E5D601BC536D400198574 /* Bugly.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 046E5D5F1BC536D400198574 /* Bugly.framework */; settings = {ASSET_TAGS = (); }; };
+		046E5D621BC53A7500198574 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 046E5D611BC53A7500198574 /* SystemConfiguration.framework */; };
+		046E5D641BC53A9800198574 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 046E5D631BC53A9800198574 /* Security.framework */; };
+		046E5D661BC53AB200198574 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 046E5D651BC53AB200198574 /* libz.tbd */; };
+		046E5D681BC53AC400198574 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 046E5D671BC53AC400198574 /* libc++.tbd */; };
 		049184D71BC3B385001D31B1 /* VideoDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 049184D61BC3B385001D31B1 /* VideoDetailCell.m */; settings = {ASSET_TAGS = (); }; };
 		049184DE1BC3C724001D31B1 /* RecommendMadel.m in Sources */ = {isa = PBXBuildFile; fileRef = 049184D91BC3C724001D31B1 /* RecommendMadel.m */; settings = {ASSET_TAGS = (); }; };
 		049184DF1BC3C724001D31B1 /* ReqInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 049184DB1BC3C724001D31B1 /* ReqInfo.m */; settings = {ASSET_TAGS = (); }; };
@@ -304,6 +309,11 @@
 		04459A101BBFDFFA00F9E160 /* NetworkPort.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkPort.m; sourceTree = "<group>"; };
 		04459A121BBFEE0900F9E160 /* UtilsCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UtilsCommon.h; sourceTree = "<group>"; };
 		04459A131BBFEE0900F9E160 /* UtilsCommon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UtilsCommon.m; sourceTree = "<group>"; };
+		046E5D5F1BC536D400198574 /* Bugly.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bugly.framework; sourceTree = "<group>"; };
+		046E5D611BC53A7500198574 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		046E5D631BC53A9800198574 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		046E5D651BC53AB200198574 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		046E5D671BC53AC400198574 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		049184D51BC3B385001D31B1 /* VideoDetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoDetailCell.h; sourceTree = "<group>"; };
 		049184D61BC3B385001D31B1 /* VideoDetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoDetailCell.m; sourceTree = "<group>"; };
 		049184D81BC3C724001D31B1 /* RecommendMadel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecommendMadel.h; sourceTree = "<group>"; };
@@ -332,6 +342,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				046E5D681BC53AC400198574 /* libc++.tbd in Frameworks */,
+				046E5D661BC53AB200198574 /* libz.tbd in Frameworks */,
+				046E5D641BC53A9800198574 /* Security.framework in Frameworks */,
+				046E5D621BC53A7500198574 /* SystemConfiguration.framework in Frameworks */,
+				046E5D601BC536D400198574 /* Bugly.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -386,6 +401,7 @@
 		044598D41BBF7F0C00F9E160 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				046E5D691BC53AD600198574 /* Frameworks */,
 				044599071BBF7F6C00F9E160 /* Resource(资源) */,
 				044598D71BBF7F0C00F9E160 /* AppDelegate.h */,
 				044598D81BBF7F0C00F9E160 /* AppDelegate.m */,
@@ -674,6 +690,7 @@
 		044599331BBF7F6C00F9E160 /* Vender(第三方) */ = {
 			isa = PBXGroup;
 			children = (
+				046E5D5E1BC536D400198574 /* Bugly_libc++ */,
 				044599CC1BBFD5F700F9E160 /* MJRefresh */,
 				044599A91BBFD3FE00F9E160 /* MJExtension */,
 				044599A51BBFD37300F9E160 /* MBProgressHUD */,
@@ -913,6 +930,26 @@
 			path = Header;
 			sourceTree = "<group>";
 		};
+		046E5D5E1BC536D400198574 /* Bugly_libc++ */ = {
+			isa = PBXGroup;
+			children = (
+				046E5D5F1BC536D400198574 /* Bugly.framework */,
+			);
+			path = "Bugly_libc++";
+			sourceTree = "<group>";
+		};
+		046E5D691BC53AD600198574 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				046E5D671BC53AC400198574 /* libc++.tbd */,
+				046E5D651BC53AB200198574 /* libz.tbd */,
+				046E5D631BC53A9800198574 /* Security.framework */,
+				046E5D611BC53A7500198574 /* SystemConfiguration.framework */,
+			);
+			name = Frameworks;
+			path = ..;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -980,6 +1017,7 @@
 				TargetAttributes = {
 					044598D01BBF7F0C00F9E160 = {
 						CreatedOnToolsVersion = 7.0;
+						DevelopmentTeam = GTVM2F95ZD;
 					};
 					044598E91BBF7F0C00F9E160 = {
 						CreatedOnToolsVersion = 7.0;
@@ -1274,11 +1312,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/MVPlayer/Vender(第三方)/Bugly_libc++",
+				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/MVPlayer/MVPlayer-Prefixpch.pch";
 				INFOPLIST_FILE = MVPlayer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jack.MVPlayer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -1286,11 +1331,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/MVPlayer/Vender(第三方)/Bugly_libc++",
+				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/MVPlayer/MVPlayer-Prefixpch.pch";
 				INFOPLIST_FILE = MVPlayer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jack.MVPlayer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
