@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>963218CA-D2A1-4B57-BCE4-7D81A96A5E82</string>
+	<key>IDESourceControlProjectName</key>
+	<string>MVPlayer</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>D9AD20830C3576614896679DB9D870A8BB7D83BC</key>
+		<string>https://github.com/CNKCQ/MVPlayer-.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>MVPlayer/MVPlayer.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>D9AD20830C3576614896679DB9D870A8BB7D83BC</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/CNKCQ/MVPlayer-.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>D9AD20830C3576614896679DB9D870A8BB7D83BC</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>D9AD20830C3576614896679DB9D870A8BB7D83BC</string>
+			<key>IDESourceControlWCCName</key>
+			<string>MVPlayer-</string>
+		</dict>
+	</array>
+</dict>
+</plist>
